@@ -130,6 +130,7 @@
     <Compile Include="SettingPage.xaml.cs">
       <DependentUpon>SettingPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SimpleSatData.cs" />
     <Compile Include="TLEData.cs" />
   </ItemGroup>
   <ItemGroup>

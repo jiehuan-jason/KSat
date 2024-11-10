@@ -225,3 +225,8 @@ D:\UWP\source\repos\KSat\KSat\obj\x86\Debug\SettingPage.xbf
 D:\UWP\source\repos\KSat\KSat\bin\x86\Debug\SettingPage.xbf
 D:\UWP\source\repos\KSat\KSat\bin\x86\Debug\SGP.NET.dll
 D:\UWP\source\repos\KSat\KSat\bin\x86\Debug\SGP.NET.pdb
+D:\UWP\source\repos\KSat\KSat\obj\x86\Debug\SelectSatPage.g.i.cs
+D:\UWP\source\repos\KSat\KSat\obj\x86\Debug\SelectSatPage.g.cs
+D:\UWP\source\repos\KSat\KSat\obj\x86\Debug\SelectSatPage.xaml
+D:\UWP\source\repos\KSat\KSat\obj\x86\Debug\SelectSatPage.xbf
+D:\UWP\source\repos\KSat\KSat\bin\x86\Debug\SelectSatPage.xbf

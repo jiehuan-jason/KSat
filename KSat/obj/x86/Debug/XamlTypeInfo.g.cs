@@ -132,17 +132,25 @@ namespace KSat.KSat_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[4];
+            _typeNameTable = new string[8];
             _typeNameTable[0] = "KSat.MainPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[3] = "KSat.SettingPage";
+            _typeNameTable[3] = "KSat.SelectSat";
+            _typeNameTable[4] = "System.Collections.Generic.List`1<String>";
+            _typeNameTable[5] = "Object";
+            _typeNameTable[6] = "String";
+            _typeNameTable[7] = "KSat.SettingPage";
 
-            _typeTable = new global::System.Type[4];
+            _typeTable = new global::System.Type[8];
             _typeTable[0] = typeof(global::KSat.MainPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[3] = typeof(global::KSat.SettingPage);
+            _typeTable[3] = typeof(global::KSat.SelectSat);
+            _typeTable[4] = typeof(global::System.Collections.Generic.List<global::System.String>);
+            _typeTable[5] = typeof(global::System.Object);
+            _typeTable[6] = typeof(global::System.String);
+            _typeTable[7] = typeof(global::KSat.SettingPage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -178,7 +186,15 @@ namespace KSat.KSat_XamlTypeInfo
         }
 
         private object Activate_0_MainPage() { return new global::KSat.MainPage(); }
-        private object Activate_3_SettingPage() { return new global::KSat.SettingPage(); }
+        private object Activate_3_SelectSat() { return new global::KSat.SelectSat(); }
+        private object Activate_4_List() { return new global::System.Collections.Generic.List<global::System.String>(); }
+        private object Activate_7_SettingPage() { return new global::KSat.SettingPage(); }
+        private void VectorAdd_4_List(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::System.String>)instance;
+            var newItem = (global::System.String)item;
+            collection.Add(newItem);
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -205,9 +221,32 @@ namespace KSat.KSat_XamlTypeInfo
                 xamlType = new global::KSat.KSat_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 3:   //  KSat.SettingPage
+            case 3:   //  KSat.SelectSat
                 userType = new global::KSat.KSat_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_3_SettingPage;
+                userType.Activator = Activate_3_SelectSat;
+                userType.AddMemberName("SatList");
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 4:   //  System.Collections.Generic.List`1<String>
+                userType = new global::KSat.KSat_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.CollectionAdd = VectorAdd_4_List;
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 5:   //  Object
+                xamlType = new global::KSat.KSat_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 6:   //  String
+                xamlType = new global::KSat.KSat_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 7:   //  KSat.SettingPage
+                userType = new global::KSat.KSat_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_7_SettingPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -216,11 +255,31 @@ namespace KSat.KSat_XamlTypeInfo
         }
 
 
+        private object get_0_SelectSat_SatList(object instance)
+        {
+            var that = (global::KSat.SelectSat)instance;
+            return that.SatList;
+        }
+        private void set_0_SelectSat_SatList(object instance, object Value)
+        {
+            var that = (global::KSat.SelectSat)instance;
+            that.SatList = (global::System.Collections.Generic.List<global::System.String>)Value;
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
             global::KSat.KSat_XamlTypeInfo.XamlMember xamlMember = null;
-            // No Local Properties
+            global::KSat.KSat_XamlTypeInfo.XamlUserType userType;
+
+            switch (longMemberName)
+            {
+            case "KSat.SelectSat.SatList":
+                userType = (global::KSat.KSat_XamlTypeInfo.XamlUserType)GetXamlTypeByName("KSat.SelectSat");
+                xamlMember = new global::KSat.KSat_XamlTypeInfo.XamlMember(this, "SatList", "System.Collections.Generic.List`1<String>");
+                xamlMember.Getter = get_0_SelectSat_SatList;
+                xamlMember.Setter = set_0_SelectSat_SatList;
+                break;
+            }
             return xamlMember;
         }
     }

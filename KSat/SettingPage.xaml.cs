@@ -95,7 +95,7 @@ namespace KSat
 
         private void Select_display_button_Click(object sender, RoutedEventArgs e)
         {
-
+            Frame.Navigate(typeof(SelectSat));
         }
     }
 }

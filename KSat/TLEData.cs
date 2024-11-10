@@ -36,9 +36,11 @@ namespace KSat
                     string line1 = TLELines[i];
                     string line2 = TLELines[i + 1];
                     string line3 = TLELines[i + 2];
-
-                    var tle = new Tle(line1, line2, line3);
-                    tle_list.Add(tle);
+                    if (!line1.StartsWith("STARLINK"))
+                    {
+                        var tle = new Tle(line1, line2, line3);
+                        tle_list.Add(tle);
+                    }
                 }
             }
             return tle_list;

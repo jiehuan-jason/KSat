@@ -1,0 +1,40 @@
+﻿<Page
+    x:Class="KSat.SelectSat"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:KSat"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <!-- 上面的内容 -->
+            <RowDefinition Height="*" />
+            <!-- ListView 填充剩余空间 -->
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" x:Name="SelectSatPanel" Orientation="Vertical">
+            <StackPanel x:Name="head" Orientation="Horizontal" Margin="0,0,10,0">
+                <Button Content="Select" HorizontalAlignment="Left" Background="Transparent" FontSize="70" Margin="10,0,0,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
+            </StackPanel>
+            <StackPanel x:Name="input" Orientation="Horizontal" Margin="20,0,0,20" HorizontalAlignment="Stretch">
+                <TextBox x:Name="textbox" Header="Enter satellite name:" PlaceholderText="Satellite" />
+                <Button x:Name="search" Content="search" Click="Search_Click" Margin="10,10,0,10"/>
+                <Button x:Name="apply" Content="Apply" Click="Apply_Click" Margin="10,10,10,10"/>
+            </StackPanel>
+            
+        </StackPanel>
+        <ListView Grid.Row="1" Margin="20,0,20,0" x:Name="sat_list" VerticalContentAlignment="Stretch" SelectionMode="Multiple" ItemsSource="{Binding SatList}"  VerticalAlignment="Stretch">
+            <ListView.ItemTemplate>
+                <!-- 定义 ListView 的 DataTemplate -->
+                <DataTemplate>
+                    <TextBlock Text="{Binding}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+    </Grid>
+</Page>

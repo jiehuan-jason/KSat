@@ -12,32 +12,34 @@
 
         <StackPanel x:ConnectionId='1' x:Name="SettingPanel" Orientation="Vertical">
             <StackPanel x:ConnectionId='2' x:Name="Head" Orientation="Horizontal">
-                <Button x:ConnectionId='13' x:Name="back"                        Content="&#xE10F;" FontSize="60" FontFamily="Segoe UI Symbol" Background="Transparent" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Height="92" Width="87" />
                 <Button Content="Setting" HorizontalAlignment="Left" Background="Transparent" FontSize="70" Margin="10,0,0,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
             </StackPanel>
             <StackPanel x:ConnectionId='3' x:Name="TLEPanel" Orientation="Vertical" Margin="2,0,20,0">
-                <TextBlock x:ConnectionId='6' HorizontalAlignment="Left" Height="47" Margin="20,0,0,0" Grid.Row="1" FontSize="30" Text="TLE Data" TextWrapping="Wrap" VerticalAlignment="Top" Width="122"                                              />
-                <TextBlock x:ConnectionId='7' x:Name="SatsCount" FontSize="20" Text="Satellites Count:0" Margin="20,0,0,10"/>
-                <TextBlock x:ConnectionId='8' x:Name="UpdateTime" FontSize="20" Text="Last Update from Web:" Margin="20,0,0,10"/>
-                <ProgressRing x:ConnectionId='9' x:Name="LoadingRing"
+                <TextBlock x:ConnectionId='8' HorizontalAlignment="Left" Height="47" Margin="20,0,0,0" Grid.Row="1" FontSize="30" Text="TLE Data" TextWrapping="Wrap" VerticalAlignment="Top" Width="122"                                              />
+                <TextBlock x:ConnectionId='9' x:Name="SatsCount" FontSize="20" Text="Satellites Count:0" Margin="20,0,0,10"/>
+                <TextBlock x:ConnectionId='10' x:Name="UpdateTime" FontSize="20" Text="Last Update from Web:" Margin="20,0,0,10"/>
+                <ProgressRing x:ConnectionId='11' x:Name="LoadingRing"
                   IsActive="False"
                   HorizontalAlignment="Center"
                   VerticalAlignment="Center"
                   Width="100"
                   Height="100"
                   Visibility="Collapsed" />
-                 <StackPanel x:ConnectionId='10' x:Name="TLEButtons" Orientation="Horizontal" Margin="20,0,20,0">
-                    <Button x:ConnectionId='11' x:Name="get_web" Content="Get From Web" HorizontalAlignment="Left" Margin="0,0,10,0" VerticalAlignment="Stretch"                      />
-                    <Button x:ConnectionId='12' x:Name="import" Content="Import From File" HorizontalAlignment="Center" Margin="10,0,0,0" VerticalAlignment="Stretch"                     />
+                 <StackPanel x:ConnectionId='12' x:Name="TLEButtons" Orientation="Horizontal" Margin="20,0,20,0">
+                    <Button x:ConnectionId='13' x:Name="get_web" Content="Get From Web" HorizontalAlignment="Left" Margin="0,0,10,0" VerticalAlignment="Stretch"                      />
+                    <Button x:ConnectionId='14' x:Name="import" Content="Import From File" HorizontalAlignment="Center" Margin="10,0,0,0" VerticalAlignment="Stretch"                     />
                  </StackPanel>
                 
         </StackPanel>
 
-        <StackPanel x:ConnectionId='4' x:Name="SatSelectPanel" Orientation="Vertical" Margin="20,0,20,0">
-            <TextBlock x:ConnectionId='5' x:Name="SelectDisplay" Text="Select Display" ></TextBlock>
+        <StackPanel x:ConnectionId='4' x:Name="SatSelectPanel" Orientation="Vertical" Margin="20,10,20,0">
+            <TextBlock x:ConnectionId='6' x:Name="SelectDisplay" Text="Select Satellites" FontSize="30"></TextBlock>
+            <Button x:ConnectionId='7' x:Name="select_display_button" Content="Go"                                     Margin="0,10,0,0"></Button>
         </StackPanel>
 
-        
+            <StackPanel x:ConnectionId='5' x:Name="About" Orientation="Vertical" Margin="20,10,20,0">
+                <TextBlock Text="©2024 Project Kinsler by jiehuan233"></TextBlock>
+            </StackPanel>
             
         </StackPanel>
     </Grid>

@@ -24,6 +24,7 @@ namespace KSat
     public sealed partial class SelectSat : Page
     {
         public List<string> SatList { get; set; }
+        public List<int> SatNumList { get; set; }
         public SelectSat()
         {
             this.InitializeComponent();
@@ -48,6 +49,7 @@ namespace KSat
                     Debug.WriteLine($"Found: Name = {tle.Name}");
                     
                     SatList.Add(tle.Name);
+                    SatNumList.Add(Convert.ToInt32(tle.NoradNumber));
                 }
             }
             else

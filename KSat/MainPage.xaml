@@ -1,0 +1,25 @@
+﻿<Page
+    x:Class="KSat.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:KSat"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <!-- 上方区域 -->
+            <RowDefinition Height="*" />
+            <!-- ListView所在区域，填充剩余空间 -->
+        </Grid.RowDefinitions>
+        <Button x:Name="setting" Click="Setting_Click"  Content="&#xE115;" FontSize="60" FontFamily="Segoe UI Symbol" Background="Transparent" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="92" Width="87"/>
+
+        <Button Content="KSat" HorizontalAlignment="Left" Background="Transparent" FontSize="120" Margin="94,-35,0,0" VerticalAlignment="Top"/>
+        <ListView Grid.Row="1" Margin="0,9.6,0,10"/>
+
+
+    </Grid>
+</Page>

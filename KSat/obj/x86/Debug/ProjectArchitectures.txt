@@ -1,0 +1,1 @@
+D:\UWP\source\repos\KSat\KSat\KSat.csproj;x86

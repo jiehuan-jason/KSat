@@ -1,0 +1,47 @@
+﻿<Page
+    x:Class="KSat.SettingPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:KSat"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+
+        <StackPanel x:Name="SettingPanel" Orientation="Vertical">
+            <StackPanel x:Name="Head" Orientation="Horizontal">
+                <Button x:Name="back" Click="Setting_Click"  Content="&#xE112;" FontSize="60" FontFamily="Segoe UI Symbol" Background="Transparent" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Height="92" Width="87" />
+                <Button Content="Setting" HorizontalAlignment="Left" Background="Transparent" FontSize="70" Margin="5,0,0,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
+            </StackPanel>
+            <StackPanel x:Name="TLEPanel" Orientation="Vertical" Margin="2,0,20,0">
+                <TextBlock HorizontalAlignment="Left" Height="47" Margin="20,0,0,0" Grid.Row="1" FontSize="30" Text="TLE Data" TextWrapping="Wrap" VerticalAlignment="Top" Width="122" SelectionChanged="TextBlock_SelectionChanged"/>
+                <TextBlock x:Name="SatsCount" FontSize="20" Text="Satellites Count:0" Margin="20,0,0,10"/>
+                <TextBlock x:Name="UpdateTime" FontSize="20" Text="Last Update from Web:" Margin="20,0,0,10"/>
+                <ProgressRing x:Name="LoadingRing"
+                  IsActive="False"
+                  HorizontalAlignment="Center"
+                  VerticalAlignment="Center"
+                  Width="100"
+                  Height="100"
+                  Visibility="Collapsed" />
+                 <StackPanel x:Name="TLEButtons" Orientation="Horizontal" Margin="20,0,20,0">
+                    <Button x:Name="get_web" Content="Get From Web" HorizontalAlignment="Left" Margin="0,0,10,0" VerticalAlignment="Stretch" Click="Get_web_Click"/>
+                    <Button x:Name="import" Content="Import From File" HorizontalAlignment="Center" Margin="10,0,0,0" VerticalAlignment="Stretch" Click="Import_Click"/>
+                 </StackPanel>
+                
+        </StackPanel>
+
+        <StackPanel x:Name="SatSelectPanel" Orientation="Vertical" Margin="20,10,20,0">
+            <TextBlock x:Name="SelectDisplay" Text="Select Satellites" FontSize="30"></TextBlock>
+            <Button x:Name="select_display_button" Content="Go" Click="Select_display_button_Click" Margin="0,10,0,0"></Button>
+        </StackPanel>
+
+            <StackPanel x:Name="About" Orientation="Vertical" Margin="20,10,20,0">
+                <TextBlock Text="©2024 Project Kinsler by jiehuan233"></TextBlock>
+            </StackPanel>
+            
+        </StackPanel>
+    </Grid>
+</Page>

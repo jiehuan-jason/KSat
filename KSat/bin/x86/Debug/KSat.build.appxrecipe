@@ -412,6 +412,9 @@
     <AppxPackagedFile Include="D:\UWP\source\repos\KSat\KSat\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\UWP\source\repos\KSat\KSat\bin\x86\Debug\SatPassListPage.xbf">
+      <PackagePath>SatPassListPage.xbf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\UWP\source\repos\KSat\KSat\bin\x86\Debug\SelectSatPage.xbf">
       <PackagePath>SelectSatPage.xbf</PackagePath>
     </AppxPackagedFile>

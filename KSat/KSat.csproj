@@ -125,6 +125,9 @@
     <Compile Include="PassDataList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SatPassingData.cs" />
+    <Compile Include="SatPassListPage.xaml.cs">
+      <DependentUpon>SatPassListPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SelectSatPage.xaml.cs">
       <DependentUpon>SelectSatPage.xaml</DependentUpon>
     </Compile>
@@ -158,6 +161,10 @@
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SatPassListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SelectSatPage.xaml">
       <SubType>Designer</SubType>

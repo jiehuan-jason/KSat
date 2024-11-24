@@ -230,3 +230,8 @@ D:\UWP\source\repos\KSat\KSat\obj\x86\Debug\SelectSatPage.g.cs
 D:\UWP\source\repos\KSat\KSat\obj\x86\Debug\SelectSatPage.xaml
 D:\UWP\source\repos\KSat\KSat\obj\x86\Debug\SelectSatPage.xbf
 D:\UWP\source\repos\KSat\KSat\bin\x86\Debug\SelectSatPage.xbf
+D:\UWP\source\repos\KSat\KSat\bin\x86\Debug\SatPassListPage.xbf
+D:\UWP\source\repos\KSat\KSat\obj\x86\Debug\SatPassListPage.g.i.cs
+D:\UWP\source\repos\KSat\KSat\obj\x86\Debug\SatPassListPage.g.cs
+D:\UWP\source\repos\KSat\KSat\obj\x86\Debug\SatPassListPage.xaml
+D:\UWP\source\repos\KSat\KSat\obj\x86\Debug\SatPassListPage.xbf

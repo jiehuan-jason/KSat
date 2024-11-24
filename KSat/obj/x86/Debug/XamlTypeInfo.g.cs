@@ -132,35 +132,37 @@ namespace KSat.KSat_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[13];
+            _typeNameTable = new string[14];
             _typeNameTable[0] = "KSat.MainPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[3] = "KSat.SelectSat";
-            _typeNameTable[4] = "System.Collections.ObjectModel.ObservableCollection`1<KSat.SimpleSatData>";
-            _typeNameTable[5] = "System.Collections.ObjectModel.Collection`1<KSat.SimpleSatData>";
-            _typeNameTable[6] = "Object";
-            _typeNameTable[7] = "KSat.SimpleSatData";
-            _typeNameTable[8] = "String";
-            _typeNameTable[9] = "Int32";
-            _typeNameTable[10] = "Boolean";
-            _typeNameTable[11] = "System.Collections.Generic.List`1<Int32>";
-            _typeNameTable[12] = "KSat.SettingPage";
+            _typeNameTable[3] = "KSat.SatPassListPage";
+            _typeNameTable[4] = "KSat.SelectSat";
+            _typeNameTable[5] = "System.Collections.ObjectModel.ObservableCollection`1<KSat.SimpleSatData>";
+            _typeNameTable[6] = "System.Collections.ObjectModel.Collection`1<KSat.SimpleSatData>";
+            _typeNameTable[7] = "Object";
+            _typeNameTable[8] = "KSat.SimpleSatData";
+            _typeNameTable[9] = "String";
+            _typeNameTable[10] = "Int32";
+            _typeNameTable[11] = "Boolean";
+            _typeNameTable[12] = "System.Collections.Generic.List`1<Int32>";
+            _typeNameTable[13] = "KSat.SettingPage";
 
-            _typeTable = new global::System.Type[13];
+            _typeTable = new global::System.Type[14];
             _typeTable[0] = typeof(global::KSat.MainPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[3] = typeof(global::KSat.SelectSat);
-            _typeTable[4] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::KSat.SimpleSatData>);
-            _typeTable[5] = typeof(global::System.Collections.ObjectModel.Collection<global::KSat.SimpleSatData>);
-            _typeTable[6] = typeof(global::System.Object);
-            _typeTable[7] = typeof(global::KSat.SimpleSatData);
-            _typeTable[8] = typeof(global::System.String);
-            _typeTable[9] = typeof(global::System.Int32);
-            _typeTable[10] = typeof(global::System.Boolean);
-            _typeTable[11] = typeof(global::System.Collections.Generic.List<global::System.Int32>);
-            _typeTable[12] = typeof(global::KSat.SettingPage);
+            _typeTable[3] = typeof(global::KSat.SatPassListPage);
+            _typeTable[4] = typeof(global::KSat.SelectSat);
+            _typeTable[5] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::KSat.SimpleSatData>);
+            _typeTable[6] = typeof(global::System.Collections.ObjectModel.Collection<global::KSat.SimpleSatData>);
+            _typeTable[7] = typeof(global::System.Object);
+            _typeTable[8] = typeof(global::KSat.SimpleSatData);
+            _typeTable[9] = typeof(global::System.String);
+            _typeTable[10] = typeof(global::System.Int32);
+            _typeTable[11] = typeof(global::System.Boolean);
+            _typeTable[12] = typeof(global::System.Collections.Generic.List<global::System.Int32>);
+            _typeTable[13] = typeof(global::KSat.SettingPage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -196,24 +198,25 @@ namespace KSat.KSat_XamlTypeInfo
         }
 
         private object Activate_0_MainPage() { return new global::KSat.MainPage(); }
-        private object Activate_3_SelectSat() { return new global::KSat.SelectSat(); }
-        private object Activate_4_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::KSat.SimpleSatData>(); }
-        private object Activate_5_Collection() { return new global::System.Collections.ObjectModel.Collection<global::KSat.SimpleSatData>(); }
-        private object Activate_11_List() { return new global::System.Collections.Generic.List<global::System.Int32>(); }
-        private object Activate_12_SettingPage() { return new global::KSat.SettingPage(); }
-        private void VectorAdd_4_ObservableCollection(object instance, object item)
+        private object Activate_3_SatPassListPage() { return new global::KSat.SatPassListPage(); }
+        private object Activate_4_SelectSat() { return new global::KSat.SelectSat(); }
+        private object Activate_5_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::KSat.SimpleSatData>(); }
+        private object Activate_6_Collection() { return new global::System.Collections.ObjectModel.Collection<global::KSat.SimpleSatData>(); }
+        private object Activate_12_List() { return new global::System.Collections.Generic.List<global::System.Int32>(); }
+        private object Activate_13_SettingPage() { return new global::KSat.SettingPage(); }
+        private void VectorAdd_5_ObservableCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::KSat.SimpleSatData>)instance;
             var newItem = (global::KSat.SimpleSatData)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_5_Collection(object instance, object item)
+        private void VectorAdd_6_Collection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::KSat.SimpleSatData>)instance;
             var newItem = (global::KSat.SimpleSatData)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_11_List(object instance, object item)
+        private void VectorAdd_12_List(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::System.Int32>)instance;
             var newItem = (global::System.Int32)item;
@@ -245,34 +248,41 @@ namespace KSat.KSat_XamlTypeInfo
                 xamlType = new global::KSat.KSat_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 3:   //  KSat.SelectSat
+            case 3:   //  KSat.SatPassListPage
                 userType = new global::KSat.KSat_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_3_SelectSat;
+                userType.Activator = Activate_3_SatPassListPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 4:   //  KSat.SelectSat
+                userType = new global::KSat.KSat_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_4_SelectSat;
                 userType.AddMemberName("SatList");
                 userType.AddMemberName("SatNumList");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 4:   //  System.Collections.ObjectModel.ObservableCollection`1<KSat.SimpleSatData>
+            case 5:   //  System.Collections.ObjectModel.ObservableCollection`1<KSat.SimpleSatData>
                 userType = new global::KSat.KSat_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<KSat.SimpleSatData>"));
-                userType.CollectionAdd = VectorAdd_4_ObservableCollection;
+                userType.CollectionAdd = VectorAdd_5_ObservableCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 5:   //  System.Collections.ObjectModel.Collection`1<KSat.SimpleSatData>
+            case 6:   //  System.Collections.ObjectModel.Collection`1<KSat.SimpleSatData>
                 userType = new global::KSat.KSat_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_5_Collection;
-                userType.CollectionAdd = VectorAdd_5_Collection;
+                userType.Activator = Activate_6_Collection;
+                userType.CollectionAdd = VectorAdd_6_Collection;
                 xamlType = userType;
                 break;
 
-            case 6:   //  Object
+            case 7:   //  Object
                 xamlType = new global::KSat.KSat_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 7:   //  KSat.SimpleSatData
+            case 8:   //  KSat.SimpleSatData
                 userType = new global::KSat.KSat_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.AddMemberName("Name");
                 userType.AddMemberName("NoradNum");
@@ -281,28 +291,28 @@ namespace KSat.KSat_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 8:   //  String
+            case 9:   //  String
                 xamlType = new global::KSat.KSat_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 9:   //  Int32
+            case 10:   //  Int32
                 xamlType = new global::KSat.KSat_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 10:   //  Boolean
+            case 11:   //  Boolean
                 xamlType = new global::KSat.KSat_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 11:   //  System.Collections.Generic.List`1<Int32>
+            case 12:   //  System.Collections.Generic.List`1<Int32>
                 userType = new global::KSat.KSat_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.CollectionAdd = VectorAdd_11_List;
+                userType.CollectionAdd = VectorAdd_12_List;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 12:   //  KSat.SettingPage
+            case 13:   //  KSat.SettingPage
                 userType = new global::KSat.KSat_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_12_SettingPage;
+                userType.Activator = Activate_13_SettingPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;

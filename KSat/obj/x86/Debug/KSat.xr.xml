@@ -42,9 +42,11 @@
       <RootProperty Name="ItemTemplate" />
       <RootProperty Name="VerticalContentAlignment" />
       <RootProperty Name="SelectionMode" />
+      <RootProperty Name="IsItemClickEnabled" />
       <RootProperty Name="ItemsSource" />
       <RootProperty Name="VerticalAlignment" />
       <RootEvent Name="SelectionChanged" />
+      <RootEvent Name="ItemClick" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.DataTemplate">
       <RootProperty Name="Template" />
@@ -80,6 +82,7 @@
     <RootType FullName="Windows.UI.Xaml.Data.Binding">
       <RootProperty Name="Mode" />
     </RootType>
+    <RootType FullName="KSat.SatPassListPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.CheckBox">
       <RootProperty Name="IsChecked" />
       <RootProperty Name="VerticalAlignment" />

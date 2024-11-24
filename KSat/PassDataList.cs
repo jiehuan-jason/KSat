@@ -19,9 +19,9 @@ namespace KSat
         {
             this.sat = sat;
             this.location = location;
-            getPassDataList(sat.NoradNum);
+            //getPassDataList(sat.NoradNum);
         }
-        private async void getPassDataList(int noradNumber)
+        public async Task getPassDataList(int noradNumber)
         {
             var TleList = await TLEData.getLocalTLEs();
             var sattle = TleList.FirstOrDefault(tle => tle.NoradNumber == noradNumber);
@@ -39,15 +39,15 @@ namespace KSat
             {
 
                 Debug.WriteLine($"最高仰角: {observation.MaxElevation} 度");
-                Debug.WriteLine($"入境时间: {observation.Start}");
-                Debug.WriteLine($"出境时间: {observation.End}");
+                Debug.WriteLine($"入境时间: {observation.Start.ToLocalTime()}");
+                Debug.WriteLine($"出境时间: {observation.End.ToLocalTime()}");
                 var start_topo = groundStation.Observe(sat, observation.Start);
                 var end_topo = groundStation.Observe(sat, observation.End);
                 var max_topo = groundStation.Observe(sat, observation.MaxElevationTime);
                 Debug.WriteLine($"入境方位角: {start_topo.Azimuth} 度");
                 Debug.WriteLine($"出境方位角: {end_topo.Azimuth} 度");
                 Debug.WriteLine($"最高仰角方位角: {max_topo.Azimuth} 度");
-                sat_passing.Add(new SatPassingData(start_topo.Azimuth, end_topo.Azimuth, observation.MaxElevation, max_topo.Azimuth, observation.Start, observation.End));
+                sat_passing.Add(new SatPassingData(start_topo.Azimuth, end_topo.Azimuth, observation.MaxElevation, max_topo.Azimuth, observation.Start.ToLocalTime(), observation.End.ToLocalTime()));
             }
             pass_list = sat_passing;
             //var observations = groundStation.Observe(sat, DateTime.UtcNow, DateTime.UtcNow + TimeSpan.FromHours(24), TimeSpan.FromSeconds(10));

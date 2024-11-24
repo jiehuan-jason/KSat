@@ -66,23 +66,11 @@ namespace KSat
 
         private void CategoryListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (CategoryListView.SelectedItem is SimpleSatData selectedCategory)
+            if (CategoryListView.SelectedItem is SimpleSatData selectedSatellite)
             {
-                // 点击类别后，显示对应的子列表
-                //CurrentCategory = selectedCategory;
-                //CategoryListView.ItemsSource = CurrentCategory.pass_list;
+                // 导航到 SatPassListPage 并传递数据
+                Frame.Navigate(typeof(SatPassListPage), selectedSatellite);
             }
-            /*else if (CategoryListView.SelectedItem is Item selectedItem)
-            {
-                // 如果需要支持返回或显示子列表项的操作
-                ContentDialog dialog = new ContentDialog
-                {
-                    Title = "Selected Item",
-                    Content = $"You selected: {selectedItem.Name}",
-                    CloseButtonText = "OK"
-                };
-                _ = dialog.ShowAsync();
-            }*/
         }
         private void ShowLoading(bool isLoading)
         {

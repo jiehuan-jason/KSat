@@ -19,7 +19,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>D:\UWP\source\repos\KSat\KSat\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>EF75ABC95622B9489F4EB930AB5C14D71E98AF311A905729D43F0AD7C7C5082B</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>7EC269741A41B7E2E552526241A4B385006612DB9E47128C0C899CD80EDDB277</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>9e31abcc-72c8-407c-905e-ef413219d903_1.0.0.0_x86__rn4be7vrdbnca</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>9e31abcc-72c8-407c-905e-ef413219d903_rn4be7vrdbnca!App</RegisteredUserModeAppID>
     <RegisteredPackageID>9e31abcc-72c8-407c-905e-ef413219d903</RegisteredPackageID>
@@ -30,13 +30,13 @@
     <AppXManifest Include="D:\UWP\source\repos\KSat\KSat\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2024-11-10T13:31:06.667</Modified>
+      <Modified>2024-11-24T09:40:20.999</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\UWP\source\repos\KSat\KSat\bin\x86\Debug\KSat.exe">
       <PackagePath>entrypoint\KSat.exe</PackagePath>
-      <Modified>2024-11-10T13:31:06.446</Modified>
+      <Modified>2024-11-24T09:40:20.780</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\microsoft.csharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -538,7 +538,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\UWP\source\repos\KSat\KSat\bin\x86\Debug\KSat.xr.xml">
       <PackagePath>KSat.xr.xml</PackagePath>
-      <Modified>2024-11-10T13:22:45.229</Modified>
+      <Modified>2024-11-24T09:40:20.679</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\UWP\source\repos\KSat\KSat\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
@@ -546,11 +546,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\UWP\source\repos\KSat\KSat\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2024-11-10T01:51:13.601</Modified>
+      <Modified>2024-11-24T09:40:20.685</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\UWP\source\repos\KSat\KSat\bin\x86\Debug\SelectSatPage.xbf">
       <PackagePath>SelectSatPage.xbf</PackagePath>
-      <Modified>2024-11-10T13:22:45.236</Modified>
+      <Modified>2024-11-24T09:29:54.907</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\UWP\source\repos\KSat\KSat\bin\x86\Debug\SettingPage.xbf">
       <PackagePath>SettingPage.xbf</PackagePath>
@@ -562,11 +562,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\UWP\source\repos\KSat\KSat\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2024-11-10T13:13:18.222</Modified>
+      <Modified>2024-11-24T09:31:40.916</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\UWP\source\repos\KSat\KSat\bin\x86\Debug\Core\KSat.exe">
       <PackagePath>KSat.exe</PackagePath>
-      <Modified>2024-11-10T13:31:06.664</Modified>
+      <Modified>2024-11-24T09:40:20.994</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

@@ -43,6 +43,22 @@ namespace KSat
             }
         }
 
+
+        public override bool Equals(object obj)
+        {
+            if (obj is SimpleSatData other)
+            {
+                return this.Name == other.Name && this.NoradNum == other.NoradNum;
+            }
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return Name.GetHashCode() ^ NoradNum.GetHashCode();
+        }
+
+
         public SimpleSatData(string name, int noradNum)
         {
             Name = name;

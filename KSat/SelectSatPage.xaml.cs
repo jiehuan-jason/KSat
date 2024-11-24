@@ -12,6 +12,7 @@ namespace KSat
     {
         public ObservableCollection<SimpleSatData> SatList { get; set; }
         public List<int> SatNumList { get; set; }
+        private List<string> selectedSatNames = new List<string>();  // 保存已选中的卫星名称
 
         public SelectSat()
         {
@@ -27,6 +28,8 @@ namespace KSat
             LoadingRing.Visibility = Visibility.Visible;
             try
             {
+                selectedSatNames = SatList.Where(sat => sat.IsSelected).Select(sat => sat.Name).ToList();
+
                 var tleList = await TLEData.getLocalTLEs();
                 SatList.Clear();
                 SatNumList.Clear();
@@ -55,8 +58,6 @@ namespace KSat
                     Debug.WriteLine($"No Tle with Name containing '{textbox.Text}' found.");
                 }
 
-                sat_list.ItemsSource = null;
-                sat_list.ItemsSource = SatList;
             }
             finally
             {
@@ -67,18 +68,44 @@ namespace KSat
 
         private async void Apply_Click(object sender, RoutedEventArgs e)
         {
+            // 获取显示列表和选中列表
+            var listItems = SatList.ToList();
             var selectedItems = SatList.Where(item => item.IsSelected).ToList();
 
             // 从本地文件获取已有的数据
-            var localData = await new SimpleSatData("",0).GetSatDataLocalAsync();
+            var localData = await new SimpleSatData("", 0).GetSatDataLocalAsync();
 
-            // 判断是否有更改
-            bool isChanged = IsDataChanged(localData, selectedItems);
+            // 第一步：检测显示列表中的项目并更新本地存储列表
+            for (int i = listItems.Count - 1; i >= 0; i--)
+            {
+                var currentItem = listItems[i];
+
+                // 如果项目存在于本地存储列表中但未被选中，从本地存储列表中删除
+                if (localData.Contains(currentItem) && !currentItem.IsSelected)
+                {
+                    localData.Remove(currentItem);
+                    Debug.WriteLine($"Removed item from local data: {currentItem.Name}");
+                }
+            }
+
+            // 第二步：检测选中列表中的项目并更新本地存储列表
+            foreach (var selectedItem in selectedItems)
+            {
+                // 如果项目不在本地存储列表中，添加到本地存储列表
+                if (!localData.Contains(selectedItem))
+                {
+                    localData.Add(selectedItem);
+                    Debug.WriteLine($"Added item to local data: {selectedItem.Name}");
+                }
+            }
+
+            // 第三步：检测是否有变化并写入本地存储
+            bool isChanged = IsDataChanged(localData, await new SimpleSatData("", 0).GetSatDataLocalAsync());
 
             if (isChanged)
             {
                 Debug.WriteLine("Data has changed, updating local file...");
-                SimpleSatData.SetSatDataLocalAsync(selectedItems);
+                SimpleSatData.SetSatDataLocalAsync(localData);
                 Debug.WriteLine("Data saved successfully.");
             }
             else
@@ -86,27 +113,29 @@ namespace KSat
                 Debug.WriteLine("No changes detected, no need to update local file.");
             }
 
+            // 跳转回设置页面
             Frame.Navigate(typeof(SettingPage));
         }
-        private bool IsDataChanged(List<SimpleSatData> localData, List<SimpleSatData> currentData)
+
+
+        private bool IsDataChanged(List<SimpleSatData> localData, List<SimpleSatData> updatedSelectedItems)
         {
-            // 如果本地数据和当前选中数据的数量不同，肯定有更改
-            if (localData.Count != currentData.Count)
-                return true;
-
-            // 按照 Name 和 NoradNum 对比每一个对象
-            foreach (var item in currentData)
+            if (localData.Count != updatedSelectedItems.Count)
             {
-                var matchingItem = localData.FirstOrDefault(data => data.Name == item.Name && data.NoradNum == item.NoradNum);
-
-                // 如果找不到匹配项，或者选中状态不同，说明有更改
-                if (matchingItem == null || matchingItem.IsSelected != item.IsSelected)
-                    return true;
+                return true;
             }
 
-            // 所有项目都匹配，说明没有更改
+            for (int i = 0; i < localData.Count; i++)
+            {
+                if (!localData[i].Equals(updatedSelectedItems[i]))
+                {
+                    return true;
+                }
+            }
+
             return false;
         }
+
 
     }
 }
